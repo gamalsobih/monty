@@ -3,11 +3,11 @@
 global_t vglo;
 
 /**
- * free_vglo - frees the global variables
+ * free_globva - frees the global variables
  *
  * Return: no return
  */
-void free_vglo(void)
+void free_globva(void)
 {
 	free_dlistint(vglo.head);
 	free(vglo.buffer);
@@ -15,12 +15,12 @@ void free_vglo(void)
 }
 
 /**
- * start_vglo - initializes the global variables
+ * start_globva - initializes the global variables
  *
  * @fd: file descriptor
  * Return: no return
  */
-void start_vglo(FILE *fd)
+void start_globva(FILE *fd)
 {
 	vglo.lifo = 1;
 	vglo.cont = 1;
@@ -31,14 +31,14 @@ void start_vglo(FILE *fd)
 }
 
 /**
- * check_input - checks if the file exists and if the file can
+ * check_arg - checks if the file exists and if the file can
  * be opened
  *
  * @argc: argument count
  * @argv: argument vector
  * Return: file struct
  */
-FILE *check_input(int argc, char *argv[])
+FILE *check_arg(int argc, char *argv[])
 {
 	FILE *fd;
 
@@ -74,8 +74,8 @@ int main(int argc, char *argv[])
 	ssize_t nlines = 0;
 	char *lines[2] = {NULL, NULL};
 
-	fd = check_input(argc, argv);
-	start_vglo(fd);
+	fd = check_arg(argc, argv);
+	start_globva(fd);
 	nlines = getline(&vglo.buffer, &size, fd);
 	while (nlines != -1)
 	{
@@ -87,7 +87,7 @@ int main(int argc, char *argv[])
 			{
 				dprintf(2, "L%u: ", vglo.cont);
 				dprintf(2, "unknown instruction %s\n", lines[0]);
-				free_vglo();
+				free_globva();
 				exit(EXIT_FAILURE);
 			}
 			vglo.arg = _strtoky(NULL, " \t\n");
@@ -97,7 +97,7 @@ int main(int argc, char *argv[])
 		vglo.cont++;
 	}
 
-	free_vglo();
+	free_globva();
 
 	return (0);
 }

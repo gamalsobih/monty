@@ -9,7 +9,7 @@ global_t vglo;
  */
 void free_globva(void)
 {
-	free_dlistint(vglo.head);
+	free_listnodeint(vglo.head);
 	free(vglo.buffer);
 	fclose(vglo.fd);
 }

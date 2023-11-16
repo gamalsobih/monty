@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * _queue - sets the format of the data to a queue (FIFO)
+ * set_queue - sets the format of the data to a queue (FIFO)
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _queue(stack_t **doubly, unsigned int cline)
+void set_queue(stack_t **doubly, unsigned int cline)
 {
 	(void)doubly;
 	(void)cline;
@@ -16,13 +16,13 @@ void _queue(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * _stack - sets the format fo the data to a stack (LIFO)
+ * set_stack - sets the format fo the data to a stack (LIFO)
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _stack(stack_t **doubly, unsigned int cline)
+void set_stack(stack_t **doubly, unsigned int cline)
 {
 	(void)doubly;
 	(void)cline;
@@ -31,13 +31,13 @@ void _stack(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * _add - adds the top two elements of the stack
+ * add_op - adds the top two elements of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _add(stack_t **doubly, unsigned int cline)
+void add_op(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -60,26 +60,26 @@ void _add(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * _nop - doesn't do anythinhg
+ * _nop_ - doesn't do anythinhg
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _nop(stack_t **doubly, unsigned int cline)
+void _nop_(stack_t **doubly, unsigned int cline)
 {
 	(void)doubly;
 	(void)cline;
 }
 
 /**
- * _sub - subtracts the top element to the second top element of the stack
+ * sub_op - subtracts the top element to the second top element of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _sub(stack_t **doubly, unsigned int cline)
+void sub_op(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;

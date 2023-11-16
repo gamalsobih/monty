@@ -69,18 +69,18 @@ void print_all(stack_t **stack, unsigned int line_number);
 void print_data(stack_t **doubly, unsigned int cline);
 void pop_node(stack_t **doubly, unsigned int cline);
 void swap_top(stack_t **doubly, unsigned int cline);
-void _queue(stack_t **doubly, unsigned int cline);
-void _stack(stack_t **doubly, unsigned int cline);
-void _add(stack_t **doubly, unsigned int cline);
-void _nop(stack_t **doubly, unsigned int cline);
-void _sub(stack_t **doubly, unsigned int cline);
+void set_queue(stack_t **doubly, unsigned int cline);
+void set_stack(stack_t **doubly, unsigned int cline);
+void add_op(stack_t **doubly, unsigned int cline);
+void _nop_(stack_t **doubly, unsigned int cline);
+void sub_op(stack_t **doubly, unsigned int cline);
 void _div(stack_t **doubly, unsigned int cline);
 void _mul(stack_t **doubly, unsigned int cline);
 void _mod(stack_t **doubly, unsigned int cline);
 void _pchar(stack_t **doubly, unsigned int cline);
 void _pstr(stack_t **doubly, unsigned int cline);
 void rotat_first(stack_t **doubly, unsigned int cline);
-void rev_stack(stack_t **doubly, unsigned int cline);
+void revset_stack(stack_t **doubly, unsigned int cline);
 
 /*get function*/
 void (*get_instructs(char *opc))(stack_t **stack, unsigned int line_number);

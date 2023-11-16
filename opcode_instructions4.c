@@ -33,13 +33,13 @@ void rotat_first(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * rev_stack - reverse the stack
+ * revset_stack - reverse the stack
  *
  * @doubly: head of the linked list
  * @cline: line number
  * Return: no return
  */
-void rev_stack(stack_t **doubly, unsigned int cline)
+void revset_stack(stack_t **doubly, unsigned int cline)
 {
 	stack_t *aux = NULL;
 	(void)cline;

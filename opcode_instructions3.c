@@ -33,7 +33,7 @@ void _div(stack_t **doubly, unsigned int cline)
 
 	aux = (*doubly)->next;
 	aux->n /= (*doubly)->n;
-	_pop(doubly, cline);
+	pop_node(doubly, cline);
 }
 
 /**
@@ -62,7 +62,7 @@ void _mul(stack_t **doubly, unsigned int cline)
 
 	aux = (*doubly)->next;
 	aux->n *= (*doubly)->n;
-	_pop(doubly, cline);
+	pop_node(doubly, cline);
 }
 
 /**
@@ -99,7 +99,7 @@ void _mod(stack_t **doubly, unsigned int cline)
 
 	aux = (*doubly)->next;
 	aux->n %= (*doubly)->n;
-	_pop(doubly, cline);
+	pop_node(doubly, cline);
 }
 /**
  * _pchar - print the char value of the first element

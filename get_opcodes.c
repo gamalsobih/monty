@@ -10,11 +10,11 @@
 void (*get_instructs(char *opc))(stack_t **stack, unsigned int line_number)
 {
 	instruction_t instruct[] = {
-		{"push", _push},
-		{"pall", _pall},
-		{"pint", _pint},
-		{"pop", _pop},
-		{"swap", _swap},
+		{"push", push_node},
+		{"pall", print_all},
+		{"pint", print_data},
+		{"pop", pop_node},
+		{"swap", swap_top},
 		{"queue", _queue},
 		{"stack", _stack},
 		{"add", _add},

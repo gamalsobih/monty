@@ -1,13 +1,13 @@
 #include "monty.h"
 
 /**
- * _div - divides the second element by the top element of the stack
+ * div_op - divides the second element by the top element of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _div(stack_t **doubly, unsigned int cline)
+void div_op(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -37,13 +37,13 @@ void _div(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * _mul - multiplies the top element to the second top element of the stack
+ * multi_op - multiplies the top element to the second top element of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _mul(stack_t **doubly, unsigned int cline)
+void multi_op(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -66,14 +66,14 @@ void _mul(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * _mod - computes the rest of the division of the second element
+ * mod_op - computes the rest of the division of the second element
  * by the top element of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _mod(stack_t **doubly, unsigned int cline)
+void mod_op(stack_t **doubly, unsigned int cline)
 {
 	int m = 0;
 	stack_t *aux = NULL;
@@ -102,13 +102,13 @@ void _mod(stack_t **doubly, unsigned int cline)
 	pop_node(doubly, cline);
 }
 /**
- * _pchar - print the char value of the first element
+ * print_char - print the char value of the first element
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _pchar(stack_t **doubly, unsigned int cline)
+void print_char(stack_t **doubly, unsigned int cline)
 {
 	if (doubly == NULL || *doubly == NULL)
 	{
@@ -126,13 +126,13 @@ void _pchar(stack_t **doubly, unsigned int cline)
 }
 
 /**
- * _pstr - prints the string of the stack
+ * print_str - prints the string of the stack
  *
  * @doubly: head of the linked list
  * @cline: line number;
  * Return: no return
  */
-void _pstr(stack_t **doubly, unsigned int cline)
+void print_str(stack_t **doubly, unsigned int cline)
 {
 	stack_t *aux;
 	(void)cline;

@@ -74,11 +74,11 @@ void set_stack(stack_t **doubly, unsigned int cline);
 void add_op(stack_t **doubly, unsigned int cline);
 void _nop_(stack_t **doubly, unsigned int cline);
 void sub_op(stack_t **doubly, unsigned int cline);
-void _div(stack_t **doubly, unsigned int cline);
-void _mul(stack_t **doubly, unsigned int cline);
-void _mod(stack_t **doubly, unsigned int cline);
-void _pchar(stack_t **doubly, unsigned int cline);
-void _pstr(stack_t **doubly, unsigned int cline);
+void div_op(stack_t **doubly, unsigned int cline);
+void multi_op(stack_t **doubly, unsigned int cline);
+void mod_op(stack_t **doubly, unsigned int cline);
+void print_char(stack_t **doubly, unsigned int cline);
+void print_str(stack_t **doubly, unsigned int cline);
 void rotat_first(stack_t **doubly, unsigned int cline);
 void revset_stack(stack_t **doubly, unsigned int cline);
 

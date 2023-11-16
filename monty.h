@@ -86,11 +86,11 @@ void _rotr(stack_t **doubly, unsigned int cline);
 void (*get_opcodes(char *opc))(stack_t **stack, unsigned int line_number);
 
 /*imported functions*/
-int _sch(char *s, char c);
-char *_strtoky(char *s, char *d);
+int _search(char *s, char c);
+char *_str_tok(char *s, char *d);
 void *_realloc(void *ptr, unsigned int old_size, unsigned int new_size);
 void *_calloc(unsigned int nmemb, unsigned int size);
-int _strcmp(char *s1, char *s2);
+int strcmp_(char *s1, char *s2);
 
 /* doubly linked list functions */
 stack_t *add_dnodeint_end(stack_t **head, const int n);

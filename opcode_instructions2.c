@@ -12,7 +12,7 @@ void _queue(stack_t **doubly, unsigned int cline)
 	(void)doubly;
 	(void)cline;
 
-	vglo.lifo = 0;
+	globva.lifo = 0;
 }
 
 /**
@@ -27,7 +27,7 @@ void _stack(stack_t **doubly, unsigned int cline)
 	(void)doubly;
 	(void)cline;
 
-	vglo.lifo = 1;
+	globva.lifo = 1;
 }
 
 /**

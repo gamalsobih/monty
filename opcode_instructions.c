@@ -11,7 +11,7 @@ void _push(stack_t **doubly, unsigned int cline)
 {
 	int n, j;
 
-	if (!vglo.arg)
+	if (!globva.arg)
 	{
 		dprintf(2, "L%u: ", cline);
 		dprintf(2, "usage: push integer\n");
@@ -19,9 +19,9 @@ void _push(stack_t **doubly, unsigned int cline)
 		exit(EXIT_FAILURE);
 	}
 
-	for (j = 0; vglo.arg[j] != '\0'; j++)
+	for (j = 0; globva.arg[j] != '\0'; j++)
 	{
-		if (!isdigit(vglo.arg[j]) && vglo.arg[j] != '-')
+		if (!isdigit(globva.arg[j]) && globva.arg[j] != '-')
 		{
 			dprintf(2, "L%u: ", cline);
 			dprintf(2, "usage: push integer\n");
@@ -30,9 +30,9 @@ void _push(stack_t **doubly, unsigned int cline)
 		}
 	}
 
-	n = atoi(vglo.arg);
+	n = atoi(globva.arg);
 
-	if (vglo.lifo == 1)
+	if (globva.lifo == 1)
 		add_node_first(doubly, n);
 	else
 		add_node_last(doubly, n);

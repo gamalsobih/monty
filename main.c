@@ -1,6 +1,6 @@
 #include "monty.h"
 
-global_t vglo;
+global_t globva;
 
 /**
  * free_globva - frees the global variables
@@ -9,9 +9,9 @@ global_t vglo;
  */
 void free_globva(void)
 {
-	free_listnodeint(vglo.head);
-	free(vglo.buffer);
-	fclose(vglo.fd);
+	free_listnodeint(globva.head);
+	free(globva.buffer);
+	fclose(globva.fd);
 }
 
 /**
@@ -22,12 +22,12 @@ void free_globva(void)
  */
 void start_globva(FILE *fd)
 {
-	vglo.lifo = 1;
-	vglo.cont = 1;
-	vglo.arg = NULL;
-	vglo.head = NULL;
-	vglo.fd = fd;
-	vglo.buffer = NULL;
+	globva.lifo = 1;
+	globva.cont = 1;
+	globva.arg = NULL;
+	globva.head = NULL;
+	globva.fd = fd;
+	globva.buffer = NULL;
 }
 
 /**
@@ -76,25 +76,25 @@ int main(int argc, char *argv[])
 
 	fd = check_arg(argc, argv);
 	start_globva(fd);
-	nlines = getline(&vglo.buffer, &size, fd);
+	nlines = getline(&globva.buffer, &size, fd);
 	while (nlines != -1)
 	{
-		lines[0] = _str_tok(vglo.buffer, " \t\n");
+		lines[0] = _str_tok(globva.buffer, " \t\n");
 		if (lines[0] && lines[0][0] != '#')
 		{
 			f = get_instructs(lines[0]);
 			if (!f)
 			{
-				dprintf(2, "L%u: ", vglo.cont);
+				dprintf(2, "L%u: ", globva.cont);
 				dprintf(2, "unknown instruction %s\n", lines[0]);
 				free_globva();
 				exit(EXIT_FAILURE);
 			}
-			vglo.arg = _str_tok(NULL, " \t\n");
-			f(&vglo.head, vglo.cont);
+			globva.arg = _str_tok(NULL, " \t\n");
+			f(&globva.head, globva.cont);
 		}
-		nlines = getline(&vglo.buffer, &size, fd);
-		vglo.cont++;
+		nlines = getline(&globva.buffer, &size, fd);
+		globva.cont++;
 	}
 
 	free_globva();
